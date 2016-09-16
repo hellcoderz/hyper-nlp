@@ -21,6 +21,7 @@ def build_vocab(train_samples):
     return vocab
 
 def train(data):
+    """train model using damping factor each turn, 50% drop every time startng with 1.0"""
     vocab = build_vocab(data)
     for d in data:
         words = d[0].split()
