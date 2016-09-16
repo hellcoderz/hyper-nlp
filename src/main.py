@@ -20,9 +20,17 @@ def build_vocab(train_samples):
                 vocab[word] = get_rand_vector()
     return vocab
 
+def train(data):
+    vocab = build_vocab(data)
+    for d in data:
+        words = d[0].split()
+        for word in words:
+            if word in vocab:
+                word_vector = vocab[word]
+                # todo from here
+
 if __name__ == "__main__":
-    data = [
+    samples = [
         ("watch harry potter", "TV"),
         ("show mw action movies", "TV")
     ]
-    vocab = build_vocab(data)
